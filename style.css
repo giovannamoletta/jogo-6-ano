@@ -70,8 +70,8 @@ main {
 .maos.grandes { font-size: 6rem; }
 
 @keyframes sobe-desce {
-  from { transform: translateY(-14px) rotate(-8deg); }
-  to   { transform: translateY(14px) rotate(8deg); }
+  from { transform: translateY(-16px); }
+  to   { transform: translateY(16px); }
 }
 
 /* botões */
@@ -258,3 +258,7 @@ main {
   box-shadow: 0 0 28px rgba(160, 90, 255, .65), 0 8px 0 rgba(0, 0, 0, .25);
 }
 #tela-inicio .maos { font-size: 2.6rem; }
+
+/* palmas das mãos viradas para cima (gesto do 67) */
+.maos i { font-style: normal; display: inline-block; }
+.maos .espelho i { transform: scaleX(-1); }
