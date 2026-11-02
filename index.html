@@ -72,6 +72,36 @@
     <p class="explosao-texto">+67 pontos de bônus</p>
   </div>
 
+  <!-- FESTA DO MASCOTE (aparece a cada acerto) -->
+  <div id="festa" class="festa" hidden aria-hidden="true">
+    <span class="festa-num festa-seis">6</span>
+    <div class="festa-centro">
+      <p id="festa-frase" class="festa-frase"></p>
+      <svg class="toco" viewBox="0 0 120 240" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="madeira" x1="0" x2="1">
+            <stop offset="0" stop-color="#e09a58"/><stop offset=".55" stop-color="#c9793a"/><stop offset="1" stop-color="#a95f28"/>
+          </linearGradient>
+        </defs>
+        <line class="perna" x1="50" y1="150" x2="46" y2="224" stroke="#b8692e" stroke-width="9" stroke-linecap="round"/>
+        <line class="perna" x1="70" y1="150" x2="74" y2="224" stroke="#b8692e" stroke-width="9" stroke-linecap="round"/>
+        <ellipse cx="42" cy="228" rx="12" ry="5" fill="#a95f28"/>
+        <ellipse cx="78" cy="228" rx="12" ry="5" fill="#a95f28"/>
+        <g class="braco braco-e"><line x1="38" y1="70" x2="12" y2="104" stroke="#b8692e" stroke-width="9" stroke-linecap="round"/><circle cx="11" cy="106" r="6" fill="#c9793a"/></g>
+        <g class="braco braco-d"><line x1="82" y1="70" x2="108" y2="104" stroke="#b8692e" stroke-width="9" stroke-linecap="round"/><circle cx="109" cy="106" r="6" fill="#c9793a"/></g>
+        <rect x="36" y="10" width="48" height="146" rx="10" fill="url(#madeira)"/>
+        <ellipse cx="60" cy="12" rx="24" ry="6" fill="#e9a869"/>
+        <path d="M44 100 Q50 108 44 118 M76 96 Q70 106 76 116" stroke="#a95f28" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="49" cy="46" rx="9" ry="11" fill="#fff"/><ellipse cx="71" cy="46" rx="9" ry="11" fill="#fff"/>
+        <circle cx="50" cy="48" r="5.5" fill="#4a2a10"/><circle cx="70" cy="48" r="5.5" fill="#4a2a10"/>
+        <circle cx="52" cy="45" r="1.8" fill="#fff"/><circle cx="72" cy="45" r="1.8" fill="#fff"/>
+        <path d="M40 30 Q49 24 58 30 M62 30 Q71 24 80 30" stroke="#4a2a10" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <path d="M46 72 Q60 88 74 72" stroke="#4a2a10" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="festa-num festa-sete">7</span>
+  </div>
+
   <p id="aviso" class="aviso" hidden></p>
 
   <footer class="rodape">

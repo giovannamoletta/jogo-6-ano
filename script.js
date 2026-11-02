@@ -1,31 +1,76 @@
 "use strict";
 
-/* ===== BANCO DE PERGUNTAS (conteúdo do 6º ano) ===== */
+/* ===== BANCO DE PERGUNTAS FIXAS (conteúdo do 6º ano) ===== */
 const BANCO = [
-  { tema: "Divisão", q: "Quanto é 48 ÷ 6?", certa: "8", erradas: ["6", "7", "9"], dica: "6 × 8 = 48, então 48 ÷ 6 = 8." },
-  { tema: "Adição", q: "Quanto é 60 + 7?", certa: "67", erradas: ["13", "76", "607"], dica: "60 + 7 = 67. Olha o 67 aí!" },
-  { tema: "Subtração", q: "Quanto é 100 − 33?", certa: "67", erradas: ["77", "63", "57"], dica: "100 − 33 = 67." },
-  { tema: "Tabuada", q: "Quanto é 6 × 7?", certa: "42", erradas: ["13", "36", "48"], dica: "6 × 7 = 42. Seis… sete!" },
   { tema: "MMC", q: "Qual é o MMC de 4 e 6?", certa: "12", erradas: ["2", "24", "10"], dica: "Múltiplos de 4: 4, 8, 12… Múltiplos de 6: 6, 12… O menor em comum é 12." },
-  { tema: "MDC", q: "Qual é o MDC de 12 e 18?", certa: "6", erradas: ["3", "12", "36"], dica: "Divisores comuns: 1, 2, 3 e 6. O maior é 6." },
-  { tema: "Frações", q: "Quanto é 3/4 de 20?", certa: "15", erradas: ["12", "5", "16"], dica: "20 ÷ 4 = 5 e 5 × 3 = 15." },
-  { tema: "Frações", q: "Qual fração é equivalente a 1/2?", certa: "3/6", erradas: ["2/6", "1/3", "3/5"], dica: "3/6: dividindo em cima e embaixo por 3 dá 1/2." },
+  { tema: "MDC", q: "Qual é o MDC de 20 e 30?", certa: "10", erradas: ["5", "60", "2"], dica: "Os divisores comuns são 1, 2, 5 e 10. O maior é 10." },
+  { tema: "Frações", q: "Qual fração é equivalente a 1/2?", certa: "3/6", erradas: ["2/6", "1/3", "3/5"], dica: "Em 3/6, dividindo em cima e embaixo por 3, dá 1/2." },
   { tema: "Frações", q: "Quanto é 1/2 + 1/4?", certa: "3/4", erradas: ["2/6", "1/6", "2/4"], dica: "1/2 = 2/4. Então 2/4 + 1/4 = 3/4." },
-  { tema: "Perímetro", q: "Um quadrado tem lado de 7 cm. Qual é o perímetro?", certa: "28 cm", erradas: ["14 cm", "49 cm", "21 cm"], dica: "Perímetro = 4 × 7 = 28 cm." },
-  { tema: "Área", q: "Um retângulo mede 6 cm por 7 cm. Qual é a área?", certa: "42 cm²", erradas: ["26 cm²", "13 cm²", "36 cm²"], dica: "Área = 6 × 7 = 42 cm²." },
-  { tema: "Potências", q: "Quanto é 2³ ?", certa: "8", erradas: ["6", "5", "9"], dica: "2³ = 2 × 2 × 2 = 8." },
-  { tema: "Potências", q: "Quanto é 7² ?", certa: "49", erradas: ["14", "42", "77"], dica: "7² = 7 × 7 = 49." },
+  { tema: "Múltiplos", q: "Qual destes números é múltiplo de 9?", certa: "54", erradas: ["52", "56", "58"], dica: "9 × 6 = 54." },
   { tema: "Números primos", q: "Qual destes números é primo?", certa: "13", erradas: ["9", "15", "21"], dica: "13 só se divide por 1 e por ele mesmo." },
-  { tema: "Múltiplos", q: "Qual destes números é múltiplo de 7?", certa: "42", erradas: ["40", "45", "50"], dica: "7 × 6 = 42." },
-  { tema: "Divisores", q: "Quantos divisores o número 6 tem?", certa: "4", erradas: ["2", "3", "6"], dica: "Os divisores de 6 são 1, 2, 3 e 6." },
+  { tema: "Divisores", q: "Quantos divisores o número 10 tem?", certa: "4", erradas: ["2", "3", "5"], dica: "Os divisores de 10 são 1, 2, 5 e 10." },
   { tema: "Decimais", q: "Quanto é 0,5 + 0,25?", certa: "0,75", erradas: ["0,30", "0,525", "0,55"], dica: "0,50 + 0,25 = 0,75." },
-  { tema: "Decimais", q: "Quanto é 5,6 − 2,3?", certa: "3,3", erradas: ["3,7", "2,3", "4,3"], dica: "56 décimos − 23 décimos = 33 décimos = 3,3." },
-  { tema: "Decimais", q: "Arredondando 6,7 para o inteiro mais próximo, temos:", certa: "7", erradas: ["6", "8", "6,5"], dica: "6,7 está mais perto de 7 do que de 6." },
-  { tema: "Porcentagem", q: "Quanto é 25% de 80?", certa: "20", erradas: ["25", "40", "16"], dica: "25% é 1/4. 80 ÷ 4 = 20." },
+  { tema: "Decimais", q: "Qual destes números decimais é o maior?", certa: "0,5", erradas: ["0,45", "0,05", "0,4"], dica: "0,5 = 0,50, que é maior que 0,45." },
+  { tema: "Decimais", q: "Arredondando 3,6 para o inteiro mais próximo, temos:", certa: "4", erradas: ["3", "5", "3,5"], dica: "3,6 está mais perto de 4 do que de 3." },
   { tema: "Expressões", q: "Quanto é 2 + 3 × 4?", certa: "14", erradas: ["20", "24", "10"], dica: "Primeiro a multiplicação: 3 × 4 = 12. Depois 2 + 12 = 14." },
+  { tema: "Potências", q: "Quanto é 5² ?", certa: "25", erradas: ["10", "7", "52"], dica: "5² = 5 × 5 = 25." },
   { tema: "Geometria", q: "Quantos graus mede um ângulo reto?", certa: "90°", erradas: ["45°", "180°", "60°"], dica: "O ângulo reto forma um 'cantinho' de 90°." },
-  { tema: "Geometria", q: "Quanto vale a soma dos ângulos de um triângulo?", certa: "180°", erradas: ["90°", "360°", "100°"], dica: "Em qualquer triângulo, a soma é sempre 180°." }
+  { tema: "Geometria", q: "Quanto vale a soma dos ângulos de um triângulo?", certa: "180°", erradas: ["90°", "360°", "100°"], dica: "Em qualquer triângulo, a soma é sempre 180°." },
+  { tema: "Geometria", q: "Quantos lados tem um pentágono?", certa: "5", erradas: ["4", "6", "8"], dica: "Penta significa cinco: o pentágono tem 5 lados." },
+  { tema: "Tempo", q: "Quantos minutos há em 2 horas e meia?", certa: "150", erradas: ["120", "130", "160"], dica: "2 h = 120 min. Mais 30 min = 150 min." },
+  { tema: "Números romanos", q: "Qual número é representado por XIV?", certa: "14", erradas: ["16", "24", "4"], dica: "X = 10 e IV = 4. Juntos: 14." }
 ];
+
+/* ===== GERADORES (números sorteados a cada partida) ===== */
+const rnd = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
+
+function montar(tema, q, valor, dica, fmt = String, passos = [1, 2, 5, 10]) {
+  const erradas = new Set();
+  while (erradas.size < 3) {
+    const p = passos[rnd(0, passos.length - 1)];
+    const d = valor + (Math.random() < 0.5 ? -p : p);
+    if (d > 0 && d !== valor) erradas.add(d);
+  }
+  return { tema, q, certa: fmt(valor), erradas: [...erradas].map(fmt), dica };
+}
+
+const GERADORES = [
+  () => { const a = rnd(120, 890), b = rnd(15, 99);
+    return montar("Adição", `Quanto é ${a} + ${b}?`, a + b, `${a} + ${b} = ${a + b}.`, String, [1, 10, 100]); },
+  () => { const a = rnd(300, 900), b = rnd(25, 190);
+    return montar("Subtração", `Quanto é ${a} − ${b}?`, a - b, `${a} − ${b} = ${a - b}.`, String, [1, 10, 100]); },
+  () => { const a = rnd(3, 12), b = rnd(4, 12);
+    return montar("Multiplicação", `Quanto é ${a} × ${b}?`, a * b, `${a} × ${b} = ${a * b}.`, String, [1, 2, a, b]); },
+  () => { const b = rnd(3, 12), r = rnd(3, 12);
+    return montar("Divisão", `Quanto é ${b * r} ÷ ${b}?`, r, `${b} × ${r} = ${b * r}, então ${b * r} ÷ ${b} = ${r}.`, String, [1, 2, 3]); },
+  () => { const den = [2, 3, 4, 5, 10][rnd(0, 4)], num = rnd(1, den - 1), k = rnd(2, 9), base = den * k;
+    return montar("Frações", `Quanto é ${num}/${den} de ${base}?`, k * num, `${base} ÷ ${den} = ${k}, e ${k} × ${num} = ${k * num}.`, String, [1, 2, k]); },
+  () => { const l = rnd(3, 15), c = rnd(3, 15);
+    return montar("Perímetro", `Um retângulo mede ${l} cm por ${c} cm. Qual é o perímetro?`, 2 * (l + c), `Perímetro = 2 × (${l} + ${c}) = ${2 * (l + c)} cm.`, (v) => v + " cm", [2, 4, 6, 10]); },
+  () => { const l = rnd(3, 12), c = rnd(3, 12);
+    return montar("Área", `Um retângulo mede ${l} cm por ${c} cm. Qual é a área?`, l * c, `Área = ${l} × ${c} = ${l * c} cm².`, (v) => v + " cm²", [2, 4, l, c]); },
+  () => { const b = rnd(2, 9), e = rnd(2, 3), v = Math.pow(b, e);
+    return montar("Potências", `Quanto é ${b}${e === 2 ? "²" : "³"} ?`, v, `${b}${e === 2 ? "²" : "³"} = ${Array(e).fill(b).join(" × ")} = ${v}.`, String, [b, 2, 4, 10]); },
+  () => { const [a, b] = [[2, 3], [3, 5], [4, 10], [6, 8], [5, 6], [8, 12], [9, 6], [4, 14]][rnd(0, 7)];
+    let m = Math.max(a, b); while (m % a || m % b) m++;
+    return montar("MMC", `Qual é o MMC de ${a} e ${b}?`, m, `O menor número que é múltiplo de ${a} e de ${b} é ${m}.`, String, [Math.min(a, b), 2, 6, 10]); },
+  () => { const p = [10, 25, 50][rnd(0, 2)], base = 20 * rnd(2, 10), v = base * p / 100;
+    return montar("Porcentagem", `Quanto é ${p}% de ${base}?`, v, `${p}% de ${base} é ${v}.`, String, [5, 10, 2]); },
+  () => { const a = rnd(11, 59), b = rnd(11, 59), f = (v) => (v / 10).toFixed(1).replace(".", ",");
+    return montar("Decimais", `Quanto é ${f(a)} + ${f(b)}?`, a + b, `${f(a)} + ${f(b)} = ${f(a + b)}.`, f, [1, 2, 10]); }
+];
+
+function aceitavel(item) { return !/67/.test(JSON.stringify(item)); }
+
+function sortearPerguntas() {
+  const fixas = embaralhar(BANCO).slice(0, 5);
+  const geradas = embaralhar(GERADORES).slice(0, 5).map((g) => {
+    let item; let t = 0;
+    do { item = g(); t++; } while (!aceitavel(item) && t < 20);
+    return item;
+  });
+  return embaralhar([...fixas, ...geradas]);
+}
 
 const TOTAL = 10;
 const PONTOS_ACERTO = 10;
@@ -89,7 +134,7 @@ function atualizarPontinhos() {
 
 /* ===== FLUXO DO JOGO ===== */
 function iniciar() {
-  lista = embaralhar(BANCO).slice(0, TOTAL);
+  lista = sortearPerguntas();
   indice = 0;
   pontos = 0;
   acertos = 0;
@@ -148,11 +193,13 @@ function responder(botao, escolha) {
     feedback.textContent = "Isso! " + item.dica;
     feedback.classList.add("ok");
 
-    if (sequencia === 6) avisar("6… falta só mais uma!");
     if (sequencia === 7) {
       pontos += BONUS_67;
       explosao67();
       sequencia = 0; // recomeça a contagem para tentar de novo
+    } else {
+      festa();
+      if (sequencia === 6) avisar("6… falta só mais uma!");
     }
   } else {
     botao.classList.add("errada");
@@ -199,6 +246,18 @@ function explosao67() {
   const el = $("explosao");
   el.hidden = false;
   setTimeout(() => { el.hidden = true; }, 2200);
+}
+
+const ELOGIOS = ["Mandou bem!", "Isso aí!", "Brabo!", "Calculou tudo!", "Que craque!", "Perfeito!", "Arrasou!"];
+
+function festa() {
+  const el = $("festa");
+  $("festa-frase").textContent = ELOGIOS[rnd(0, ELOGIOS.length - 1)];
+  el.hidden = true;
+  void el.offsetWidth; // reinicia a animação
+  el.hidden = false;
+  clearTimeout(festa.t);
+  festa.t = setTimeout(() => { el.hidden = true; }, 2000);
 }
 
 function avisar(texto) {

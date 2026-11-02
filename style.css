@@ -201,3 +201,48 @@ main {
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ===== FESTA DO MASCOTE (a cada acerto) ===== */
+.festa {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 6;
+  display: flex; justify-content: center; align-items: flex-end; gap: clamp(6px, 3vw, 28px);
+  pointer-events: none;
+  animation: festa-sobe 2s ease-in-out forwards;
+}
+.festa-centro { display: flex; flex-direction: column; align-items: center; }
+.festa-frase {
+  font-family: var(--fonte-titulo); font-size: 1.3rem; margin: 0 0 6px;
+  background: var(--amarelo); color: var(--marinho);
+  padding: 6px 16px; border-radius: 99px;
+  animation: pulo .4s ease-out .2s backwards;
+}
+.toco { height: min(36vh, 250px); width: auto; transform-origin: 50% 100%; animation: danca .45s ease-in-out infinite alternate; }
+.braco-e { transform-origin: 38px 70px; animation: tchau-e .3s ease-in-out infinite alternate; }
+.braco-d { transform-origin: 82px 70px; animation: tchau-d .3s ease-in-out infinite alternate .15s; }
+.perna { transform-origin: 60px 150px; }
+
+.festa-num {
+  font-family: var(--fonte-titulo); font-size: clamp(4rem, 18vw, 7rem); line-height: 1;
+  color: var(--amarelo);
+  text-shadow: 0 0 14px #ff9d00, 0 0 34px #ff3d8b, 4px 4px 0 var(--rosa);
+  margin-bottom: 12vh;
+  animation: brilha .4s ease-in-out infinite alternate;
+}
+.festa-sete { animation-delay: .2s; }
+
+@keyframes festa-sobe {
+  0%   { transform: translateY(110%); }
+  18%  { transform: translateY(0); }
+  82%  { transform: translateY(0); }
+  100% { transform: translateY(110%); }
+}
+@keyframes danca {
+  from { transform: rotate(-5deg) translateY(0); }
+  to   { transform: rotate(5deg) translateY(-12px); }
+}
+@keyframes tchau-e { from { transform: rotate(-25deg); } to { transform: rotate(20deg); } }
+@keyframes tchau-d { from { transform: rotate(25deg); } to { transform: rotate(-20deg); } }
+@keyframes brilha {
+  from { transform: scale(.9) rotate(-6deg); filter: brightness(1); }
+  to   { transform: scale(1.12) rotate(6deg); filter: brightness(1.3); }
+}
