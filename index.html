@@ -3,50 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aura 67 – Jogo de Matemática</title>
+  <title>Missão 67 – Jogo de Matemática do 6º ano</title>
+  <meta name="description" content="Jogo de matemática para o 6º ano: acerte 7 seguidas e solte o 67!">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Nunito:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="game">
-    <header class="topo">
-      <h1>Aura <span class="n67">67</span></h1>
-      <p class="sub">Matemática do 6º ano: acerte e encha seu medidor de aura!</p>
-    </header>
+  <header class="topo">
+    <h1 class="logo">Missão <span class="logo-67">67</span></h1>
+    <p class="placar" aria-live="polite">Pontos: <strong id="pontos">0</strong></p>
+  </header>
 
-    <!-- Tela inicial -->
-    <section id="tela-inicio" class="tela ativa">
-      <p class="explica">São 10 perguntas. Cada acerto vale <strong>+67 de aura</strong>. Acertos seguidos dão bônus. Errou? Perde um pouco de aura.</p>
-      <button id="btn-iniciar" class="btn">Começar</button>
+  <main>
+    <!-- TELA INICIAL -->
+    <section id="tela-inicio" class="tela">
+      <div class="maos" aria-hidden="true"><span>🤲</span><span>🤲</span></div>
+      <h2 class="titulo-grande">Acerte <b>6</b>… e depois <b>7</b>!</h2>
+      <p class="texto">
+        São 10 desafios de matemática do 6º ano. Acertou 7 perguntas seguidas?
+        Você solta o <strong>67</strong> e ganha <strong>+67 pontos</strong> de bônus!
+      </p>
+      <button id="btn-iniciar" class="btn btn-principal" type="button">Começar missão</button>
+      <p class="recorde">Seu recorde: <strong id="recorde">0</strong> pontos</p>
     </section>
 
-    <!-- Tela do jogo -->
-    <section id="tela-jogo" class="tela">
-      <div class="placar" aria-live="polite">
-        <span>Pergunta <b id="num">1</b>/10</span>
-        <span>Sequência: <b id="seq">0</b></span>
-        <span>Aura: <b id="pontos">0</b></span>
+    <!-- TELA DO JOGO -->
+    <section id="tela-jogo" class="tela" hidden>
+      <div class="status">
+        <p>Pergunta <strong id="num-pergunta">1</strong> de 10</p>
+        <div class="barra" role="progressbar" aria-label="Progresso" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0">
+          <div id="barra-prog"></div>
+        </div>
       </div>
-      <div class="medidor" role="progressbar" aria-label="Medidor de aura" aria-valuemin="0" aria-valuemax="670">
-        <div id="barra"></div>
+
+      <div class="sequencia">
+        <p class="sequencia-rotulo">Sequência de acertos</p>
+        <ol id="pontinhos" class="pontinhos" aria-label="Sequência de acertos"></ol>
       </div>
-      <h2 id="pergunta" class="pergunta"></h2>
-      <div id="opcoes" class="opcoes"></div>
-      <p id="feedback" class="feedback" aria-live="polite"></p>
-      <button id="btn-prox" class="btn" hidden>Próxima</button>
+
+      <article class="cartao">
+        <p id="tema" class="tema"></p>
+        <h2 id="pergunta" class="pergunta"></h2>
+        <div id="opcoes" class="opcoes"></div>
+        <p id="feedback" class="feedback" role="status" aria-live="polite"></p>
+        <button id="btn-proxima" class="btn btn-principal" type="button" hidden>Próxima</button>
+      </article>
     </section>
 
-    <!-- Tela final -->
-    <section id="tela-fim" class="tela">
-      <h2 id="rank"></h2>
-      <p class="final">Aura final: <b id="aura-final">0</b></p>
-      <p id="msg-final"></p>
-      <button id="btn-reiniciar" class="btn">Jogar de novo</button>
+    <!-- TELA FINAL -->
+    <section id="tela-fim" class="tela" hidden>
+      <h2 class="titulo-grande">Missão cumprida!</h2>
+      <p id="fim-patente" class="patente"></p>
+      <p class="texto">
+        Você acertou <strong id="fim-acertos">0</strong> de 10 e fez
+        <strong id="fim-pontos">0</strong> pontos.<br>
+        Maior sequência: <strong id="fim-seq">0</strong>.
+      </p>
+      <button id="btn-reiniciar" class="btn btn-principal" type="button">Jogar de novo</button>
     </section>
   </main>
 
-  <div id="pop" class="pop" aria-hidden="true">SIX SEVEN!</div>
+  <!-- EXPLOSÃO DO 67 -->
+  <div id="explosao" class="explosao" hidden aria-live="assertive">
+    <div class="maos grandes" aria-hidden="true"><span>🤲</span><span>🤲</span></div>
+    <p class="explosao-numero">67!</p>
+    <p class="explosao-texto">+67 pontos de bônus</p>
+  </div>
+
+  <p id="aviso" class="aviso" hidden></p>
+
+  <footer class="rodape">
+    <p>Matemática • 6º ano • Feito com HTML, CSS e JavaScript</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
