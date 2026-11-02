@@ -273,14 +273,3 @@ $("btn-reiniciar").addEventListener("click", iniciar);
 $("btn-proxima").addEventListener("click", avancar);
 $("explosao").addEventListener("click", () => { $("explosao").hidden = true; });
 $("recorde").textContent = lerRecorde();
-
-/* ===== GIF DA ABERTURA: tenta outro nome e, se falhar, esconde a imagem ===== */
-(function () {
-  const img = document.querySelector(".meme-abertura");
-  if (!img) return;
-  let tentouOutro = false;
-  img.addEventListener("error", () => {
-    if (!tentouOutro) { tentouOutro = true; img.src = "angry-bird-meme.gif"; }
-    else { img.hidden = true; }
-  });
-})();
